@@ -56,6 +56,10 @@
     background-color: var(--theia-selection-background);
 }
 
+.edit-trace-name {
+    display: inline-block;
+}
+
 /* Share options have been commented out, grid is disabled to optimize horizontal space */
 /* .trace-element-container {
     display: grid;

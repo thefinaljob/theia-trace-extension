@@ -23,6 +23,7 @@ export declare interface SignalManager {
 }
 
 export const Signals = {
+    TABNAME_CHANGED: 'tab changed',
     TRACE_OPENED: 'trace opened',
     TRACE_CLOSED: 'trace closed',
     EXPERIMENT_OPENED: 'experiment opened',
@@ -43,6 +44,9 @@ export const Signals = {
 };
 
 export class SignalManager extends EventEmitter implements SignalManager {
+    fireTabChangedSignal(tabName: string, expirementUUID: string): void {
+        this.emit(Signals.TABNAME_CHANGED, {tabName, expirementUUID});
+    }
     fireTraceOpenedSignal(trace: Trace): void {
         this.emit(Signals.TRACE_OPENED, trace);
     }
